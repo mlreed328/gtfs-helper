@@ -1,0 +1,12 @@
+<h1>Upload Google Transit ZIP file</h1>
+<div>
+  <% form_for @upload do |f| %>
+    <div class='field'>
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+    </div>
+    <div class='field'>
+      <%= f.submit 'Upload' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+defaults: &defaults
+  adapter: mysql
+  encoding: utf8
+  username: root
+  password: 
+
+development:
+  database: gtfs-helper_development
+  <<: *defaults
+
+test:
+  database: gtfs-helper_test
+  <<: *defaults
+
+production:
+  database: gtfs-helper_development
+  <<: *defaults
