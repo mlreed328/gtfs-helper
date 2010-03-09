@@ -2,3 +2,12 @@
 <ul>
   <li><%= link_to 'Upload a file', new_uploads_path %></li>
 </ul>
+<div>
+  <h2>Uploaded files</h2>
+  <p>Last upload <%= Upload.last.created_at.strftime("%m/%d/%Y %I:%M%p") %></p>
+  <ul>
+    <% Dir.foreach("#{Rails.root}/tmp/gtfs") do |file| %>
+      <li><%= file %></li>
+    <% end %>
+  </ul>
+</div>

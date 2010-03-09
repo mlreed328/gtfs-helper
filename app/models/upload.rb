@@ -5,7 +5,7 @@ class Upload < ActiveRecord::Base
   has_attached_file :data
   
   def reset_tmp_dir
-    FileUtils.rm_r "#{Rails.root}/tmp/gtfs"
+    FileUtils.rm_r "#{Rails.root}/tmp/gtfs" if File.exist?("#{Rails.root}/tmp/gtfs")
     FileUtils.mkdir "#{Rails.root}/tmp/gtfs"
   end
   
