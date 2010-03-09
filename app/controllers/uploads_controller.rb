@@ -4,7 +4,12 @@ class UploadsController < ApplicationController
   end
   def create
     @upload = Upload.new(params[:upload])
-    flash[:notice] = "Upload created"
-    redirect_to root_path
+    if @upload.save
+      flash[:notice] = "Upload created"
+      redirect_to root_path
+    else
+      flash[:notice] = "Error"
+      render :new
+    end
   end
 end
